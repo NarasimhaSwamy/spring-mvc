@@ -3,10 +3,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spring.demo</groupId>
-	<artifactId>basic-xml-setup</artifactId>
+	<artifactId>spring-mvc</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>basic-xml-setup Maven Webapp</name>
+	<name>Spring-MVC Maven Webapp</name>
 
 	<properties>
 		<springframework.version>4.0.6.RELEASE</springframework.version>
@@ -44,7 +44,20 @@
 	</dependencies>
 
 	<build>
-		<finalName>basic-xml-setup</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <warSourceDirectory>src/main/webapp</warSourceDirectory>
+                        <warName>spring-mvc</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
+                    </configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 </project>
